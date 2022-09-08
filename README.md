@@ -9,7 +9,8 @@
 - Producer: Eevi Ojala
 - Programmer: Mikko Jyrkäs
 - Art:
-    - Lead: Joonas Maukkala
-    - 
+    - Lead: Joonas Raumala
+    - UI & Desing: Alina Nikkari
+    - Background: Oona Huttunen
 
 
