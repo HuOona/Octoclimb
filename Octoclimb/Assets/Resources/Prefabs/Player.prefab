@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 119135301232844282}
   - component: {fileID: 5732680209407897427}
+  - component: {fileID: 2600134373624565505}
+  - component: {fileID: -5758080079533023931}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -84,3 +86,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2600134373624565505
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5096652566880412287}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-5758080079533023931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5096652566880412287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89baeff3bd5b6f744a412e53d9e80abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinning: 0
+  blob: {fileID: 0}
