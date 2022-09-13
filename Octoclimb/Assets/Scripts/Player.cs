@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
     public bool spinning;
 
-    Rigidbody2D RGB;
+    Vector2 Velocity = new Vector2(0,0);
+    public float gravity;
     public Vector2 blob = new Vector2(0,0); // pole platform
     private float spinRadius = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        RGB = GetComponent<Rigidbody2D>();
+        
     }
 
     void userInput()
@@ -25,6 +25,17 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (spinning)
+        {
+            transform.RotateAround(blob, Vector3.forward, 20 * Time.deltaTime);
+        }
+        else
+        {
+            //acceleration
+            Velocity.y -= gravity * Time.deltaTime * Time.deltaTime;
+
+        }
+
         //Mobile
         if (Input.touchCount > 0)
         {
@@ -32,6 +43,7 @@ public class Player : MonoBehaviour
             if (!spinning)
             {
                 //Start spin
+                Velocity = new Vector2(0, 0);
             }
         }
         else
@@ -44,16 +56,15 @@ public class Player : MonoBehaviour
         {
             if (Vector2.Distance(transform.position, blob) > spinRadius)
             {
-                RGB.velocity = Vector2.MoveTowards(blob,-transform.position, 1);
-                //transform.Translate(new Vector2(blob.x - transform.position.x, blob.y - transform.position.y)*Time.deltaTime * 10);
+
             }
             if (!spinning)
             {
                 //max distance = 2
                 //add velocity
 
-                
 
+                Velocity = new Vector2(0, 0);
                 spinning = true;
             }
         }
@@ -61,5 +72,6 @@ public class Player : MonoBehaviour
         {
             spinning = false;
         }
+        transform.Translate(Velocity);
     }
 }
