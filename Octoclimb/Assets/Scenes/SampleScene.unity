@@ -282,7 +282,6 @@ MonoBehaviour:
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
@@ -360,6 +359,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2221486838825118715, guid: ca75bbccf87cac14898c385ae506ddea, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 2221486838825118715, guid: ca75bbccf87cac14898c385ae506ddea, type: 3}
       propertyPath: ss.x
       value: 1
       objectReference: {fileID: 0}
@@ -378,6 +381,10 @@ PrefabInstance:
     - target: {fileID: 2221486838825118715, guid: ca75bbccf87cac14898c385ae506ddea, type: 3}
       propertyPath: startPos.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2221486838825118715, guid: ca75bbccf87cac14898c385ae506ddea, type: 3}
+      propertyPath: cameraSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3361622448007313760, guid: ca75bbccf87cac14898c385ae506ddea, type: 3}
       propertyPath: m_RootOrder

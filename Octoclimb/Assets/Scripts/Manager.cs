@@ -8,7 +8,7 @@ public class Manager : MonoBehaviour
 {
     private GameObject player;
     [Tooltip("Startting position of player."), SerializeField] private Vector2 startPos;
-    [Tooltip("Camera"), SerializeField] private GameObject camera;
+    [Tooltip("Camera"), SerializeField] private GameObject cam;
     [Tooltip("Camera's speed variable"), SerializeField] private float cameraSpeed;
 
 
@@ -25,7 +25,7 @@ public class Manager : MonoBehaviour
 
     void Update()
     {
-        camera.transform.Translate(new Vector2(0f, Mathf.Clamp((player.transform.position.y - camera.transform.position.y) * Time.deltaTime * cameraSpeed, -1f * cameraSpeed, 1f * cameraSpeed)));
+        cam.transform.Translate(new Vector2(0f, Mathf.Clamp((player.transform.position.y - cam.transform.position.y) * Time.deltaTime * cameraSpeed, -1f * cameraSpeed, 1f * cameraSpeed)));
     }
 }
 
