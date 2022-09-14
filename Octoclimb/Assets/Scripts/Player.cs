@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public bool spinning;
 
     [SerializeField]private float spinSpeed;
+    [SerializeField] private float swingSpeed;
 
     Vector2 Velocity = new Vector2(0,0);
     Vector2 Move = new Vector2(0,0);
@@ -30,18 +31,21 @@ public class Player : MonoBehaviour
     {
         if (spinning)
         {
+            //transform.Translate(Vector2.MoveTowards(transform.position, new Vector2(blob.x + spinRadius, blob.y + spinRadius), spinRadius));
             transform.RotateAround(blob, Vector3.forward, spinSpeed * Time.deltaTime);
-            Move.x = 1 * Time.deltaTime;
+            Move.x = swingSpeed * Time.deltaTime;
+            Move.y = swingSpeed * 0.4f * Time.deltaTime;
         }
         else
         {
-
-            //move - 1 until 0
-            if (Move.y <= 0) Move.y += 1 * Time.deltaTime * Time.deltaTime;
-            if (Move.x <= 0) Move.y += 1 * Time.deltaTime * Time.deltaTime;
-            if (Move.y >= 0) Move.y -= 1 * Time.deltaTime * Time.deltaTime;
-            if (Move.x >= 0) Move.y -= 1 * Time.deltaTime * Time.deltaTime;
-
+            print(Vector2.Distance(Move, Vector2.zero));
+            if (Vector2.Distance(Move, Vector2.zero) > 0.01f) 
+            { 
+                Move.x -= 0.1f;
+                Move.y -= 0.1f; 
+            }
+            else Move = Vector2.zero;
+            
             //Gravitational acceleration
             Velocity -= new Vector2(0, 1) * gravity * Time.deltaTime * Time.deltaTime;
 

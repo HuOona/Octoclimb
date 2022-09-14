@@ -99,5 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spinning: 0
   spinSpeed: 500
+  swingSpeed: 50
   gravity: 0
   blob: {x: 0, y: 0}
