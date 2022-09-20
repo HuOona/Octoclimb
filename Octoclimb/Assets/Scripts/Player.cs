@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] Rigidbody2D RGB;
     private HingeJoint2D HJ;
     [SerializeField] float maxSpeed;
+    [SerializeField] Vector2 spinRadius;
 
     private Vector2 Pole;
     private Vector2 Dir;
@@ -35,6 +36,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    void startSpin()
+    {
+        transform.position = Pole + spinRadius ;
+        transform.rotation = Quaternion.identity;
+        HJ.anchor = (new Vector3(Pole.x, Pole.y, 0) - transform.position) / transform.localScale.x;
+        spinning = true;
+        HJ.enabled = true;
+        spinnable = false;
+        RGB.simulated = true;
+
+    }
+
     private void Update()
     {
         //mobile
@@ -44,14 +57,8 @@ public class Player : MonoBehaviour
 
             if (!spinning && spinnable)
             {
-                transform.position = Pole + Vector2.up;
-                transform.rotation = Quaternion.identity;
-                HJ.anchor = new Vector3(Pole.x, Pole.y, 0) - transform.position;
-                spinning = true;
-                HJ.enabled = true;
-                spinnable = false;
-                RGB.simulated = true;
                 //start ´the spin´
+                startSpin();
             }
 
             //Which side clicked
@@ -69,14 +76,8 @@ public class Player : MonoBehaviour
         {
             if (!spinning && spinnable)
             {
-                transform.position = Pole + Vector2.up;
-                transform.rotation = Quaternion.identity;
-                HJ.anchor = new Vector3(Pole.x, Pole.y, 0) - transform.position;
-                spinning = true;
-                HJ.enabled = true;
-                spinnable = false;
-                RGB.simulated = true;
                 //start ´the spin´
+                startSpin();
             }
 
             //Which side clicked
