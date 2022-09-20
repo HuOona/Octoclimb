@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private HingeJoint2D HJ;
     [SerializeField] float maxSpeed;
     [SerializeField] Vector2 spinRadius;
+    [SerializeField] float spinForce;
 
     private Vector2 Pole;
     private Vector2 Dir;
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                RGB.AddRelativeForce(Dir);
+                RGB.AddRelativeForce(Dir );
             }
         }
     }
