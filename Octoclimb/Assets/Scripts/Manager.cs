@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 
 public class Manager : MonoBehaviour
@@ -36,9 +36,9 @@ public class Manager : MonoBehaviour
 
     void Update()
     {
-        if (player.transform.position.y < cam.transform.position.y - offset.y - 2) 
-        { 
-            //Defeat
+        if (player.transform.position.y < cam.transform.position.y - offset.y - 5) 
+        {
+            SceneManager.LoadScene("Start");
         }
         //Remove old blobs
         if (blobList[0].transform.position.y - player.transform.position.y +10 < 0)
