@@ -32,13 +32,14 @@ public class Player : MonoBehaviour
             }
             else
             {
-                RGB.AddRelativeForce(Dir );
+                RGB.AddRelativeForce(Dir * spinForce *Time.deltaTime);
             }
         }
     }
 
     void startSpin()
     {
+        RGB.velocity = Vector2.zero;
         transform.position = Pole + spinRadius ;
         transform.rotation = Quaternion.identity;
         HJ.anchor = (new Vector3(Pole.x, Pole.y, 0) - transform.position) / transform.localScale.x;
@@ -49,7 +50,7 @@ public class Player : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         //mobile
         if (Input.touchCount > 0)

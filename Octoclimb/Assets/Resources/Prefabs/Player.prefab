@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RGB: {fileID: -3289425327316287352}
-  maxSpeed: 10
+  maxSpeed: 40
   spinRadius: {x: 0, y: 1}
-  spinForce: 10
+  spinForce: 100
 --- !u!50 &-3289425327316287352
 Rigidbody2D:
   serializedVersion: 4
